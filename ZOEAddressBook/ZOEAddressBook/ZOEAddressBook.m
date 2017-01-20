@@ -122,7 +122,6 @@
             if (granted) {
                 isSuccess([self getAllContacts]);
             }else {
-                isSuccess(self.dataSource);
                 UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"提醒" message:@"您需要进入手机的设置中设置允许访问手机通讯录" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
                 [alertView show];
             }
