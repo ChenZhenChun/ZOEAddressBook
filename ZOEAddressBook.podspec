@@ -32,8 +32,6 @@ sss.public_header_files = 'ZOEAddressBook/ZOEAddressBook/*.h'
 sss.dependency 'ZOEAddressBook/model'
 end
 
-
-
 s.frameworks = 'Foundation', 'UIKit','AddressBook'
 
 # s.ios.exclude_files = 'Classes/osx'
