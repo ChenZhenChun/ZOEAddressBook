@@ -115,16 +115,14 @@
     return phoneNO;
 }
 
-- (void)getMemberListModel:(void (^)(NSMutableArray<ContactModel *> *))isSuccess {
+- (void)getMemberListModel:(void (^)(NSMutableArray<ContactModel *> *,NSString *))isSuccess {
     error = NULL;
     ABAddressBookRequestAccessWithCompletion(self.addressBook, ^(bool granted, CFErrorRef error) {
         dispatch_async(dispatch_get_main_queue(), ^{
             if (granted) {
-                isSuccess([self getAllContacts]);
+                isSuccess([self getAllContacts],nil);
             }else {
-                isSuccess(self.dataSource);
-                UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"提醒" message:@"您需要进入手机的设置中设置允许访问手机通讯录" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
-                [alertView show];
+                isSuccess(self.dataSource,@"您需要进入手机的设置中设置允许访问手机通讯录");
             }
         });
         

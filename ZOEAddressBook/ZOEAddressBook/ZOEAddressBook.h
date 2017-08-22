@@ -10,5 +10,5 @@
 #import "ContactModel.h"
 
 @interface ZOEAddressBook : NSObject
-- (void)getMemberListModel:(void (^)(NSMutableArray<ContactModel *> *data)) isSuccess;
+- (void)getMemberListModel:(void (^)(NSMutableArray<ContactModel *> *data,NSString *error)) isSuccess;
 @end
